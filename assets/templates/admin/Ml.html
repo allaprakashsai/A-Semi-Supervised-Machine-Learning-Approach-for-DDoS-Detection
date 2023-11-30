@@ -1,0 +1,76 @@
+{% extends 'admin/adminbase.html' %}
+{% load static %}
+{% block contents %}
+
+<style>
+    table {
+        margin: 0 auto;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    h1 {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Set color for text */
+    th, td, h1 {
+        color: rgb(228, 228, 236);
+    }
+</style>
+
+<h1>Machine Learning Results</h1>
+
+<table>
+    <tr>
+        <th>Model</th>
+        <th>Accuracy</th>
+        <th>Precision</th>
+        <th>Recall</th>
+        <th>F1 Score</th>
+    </tr>
+    <tr>
+        <td>Logistic Regression</td>
+        <td>{{ output_lr.0 }}</td>
+        <td>{{ output_lr.1 }}</td>
+        <td>{{ output_lr.2 }}</td>
+        <td>{{ output_lr.3 }}</td>
+    </tr>
+    <tr>
+        <td>Random Forest</td>
+        <td>{{ output_rf.0 }}</td>
+        <td>{{ output_rf.1 }}</td>
+        <td>{{ output_rf.2 }}</td>
+        <td>{{ output_rf.3 }}</td>
+    </tr>
+    <tr>
+        <td>Decision Tree</td>
+        <td>{{ output_dt.0 }}</td>
+        <td>{{ output_dt.1 }}</td>
+        <td>{{ output_dt.2 }}</td>
+        <td>{{ output_dt.3 }}</td>
+    </tr>
+    <tr>
+        <td>Gaussian Naive Bayes</td>
+        <td>{{ output_nb.0 }}</td>
+        <td>{{ output_nb.1 }}</td>
+        <td>{{ output_nb.2 }}</td>
+        <td>{{ output_nb.3 }}</td>
+    </tr>
+    <tr>
+        <td>K Nearest Neighbors</td>
+        <td>{{ output_knn.0 }}</td>
+        <td>{{ output_knn.1 }}</td>
+        <td>{{ output_knn.2 }}</td>
+        <td>{{ output_knn.3 }}</td>
+    </tr>
+</table>
+
+
+{% endblock %}

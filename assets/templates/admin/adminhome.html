@@ -1,0 +1,49 @@
+{% extends 'admin/adminbase.html' %}
+{% load static %}
+{% block contents %}
+
+<section class="">
+    <div class="container py-4">
+        <div class="row d-flex justify-content-center py-5">
+            <div class="col-md-12">
+
+             <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Activate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.phoneno}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.status}}</td>
+
+                        {% if i.status == 'waiting' %}
+                        <td><a class="btn-link" href="/AdminActiveUsers/?uid={{ i.id }}"
+                               style="color:rgb(235, 235, 239)">Activate</a></td>
+                        {% else %}
+                        <td> Activated</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

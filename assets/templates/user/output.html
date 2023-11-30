@@ -1,0 +1,38 @@
+{% extends 'user/userbase.html' %}
+{% load static %}
+{% block contents %}
+
+<title>Output</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-size: 36px;
+        }
+    </style>
+
+    {% if pred == 1 %}
+        <div class="center">
+            <h1>It is an DDoS attack</h1>
+        </div>
+    {% else %}
+        <div class="center">
+            <h1>It is Not an DDoS attack</h1>
+        </div>
+    {% endif %}
+
+{% endblock %}

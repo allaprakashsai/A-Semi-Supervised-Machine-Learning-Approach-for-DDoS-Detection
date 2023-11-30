@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+<section>
+    <div class="lgp-hd"></div>
+    <div class="container login-cont">
+        <div class="row">
+            <div class="col-10 col-sm-6 col-md-4 col-lg-4 offset-1 offset-sm-3 offset-md-4 offset-lg-4 login-col"><i class="icon ion-lock-combination"></i>
+                <br><br><br><br><br><br><br><br>
+                <form action="/userloginaction/" class="login-form" method="post">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <input class="form-control form-control-lg lg-frc" type="text" name="email" required="" placeholder="Enter User Email">
+                    </div>
+                    <div class="form-group mb-3">
+                        <input class="form-control form-control-lg lg-frc" type="password" name="upasswd" required="" placeholder="Enter Password">
+                    </div>
+                    <div class="form-group mb-3">
+                        <button class="btn btn-light btn-lg login-btn" type="submit" value="submit"><strong>Login</strong></button>
+                    </div>
+                    {% if messages %}
+                    {% for message in messages %}
+                        <font color='White'> {{ message }}</font>
+                    {% endfor %}
+                {% endif %}
+                </form>
+                <form action="/userregister/" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-light btn-lg login-btn" type="submit" value="submit"><strong>Register</strong></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
