@@ -1,4 +1,4 @@
-# Boosting Based DDoS Detection in Inernet of Things Systems/ Semi Supervised Machine Learning Approach for DDoS Detection
+# Boosting Based DDoS Detection in Internet of Things Systems/ Semi Supervised Machine Learning Approach for DDoS Detection
 Semi-supervised machine learning for DDoS detection combines labeled and unlabeled data, improving accuracy. It optimizes models using a limited labeled dataset and leverages the abundance of unlabeled data, enhancing the system's ability to adapt to evolving DDoS attack patterns.
 
 Boosting-based DDoS detection in Internet of Things (IoT) systems refers to the application of boosting algorithms to identify and mitigate Distributed Denial of Service (DDoS) attacks within IoT environments. DDoS attacks are malicious attempts to disrupt the normal functioning of a network, service, or website by overwhelming it with a flood of traffic. In the context of IoT, where a multitude of interconnected devices communicate with each other, the susceptibility to such attacks is heightened.
